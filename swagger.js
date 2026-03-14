@@ -6,7 +6,7 @@ const doc = {
     description: 'API documentation for contacts'
   },
   host: 'localhost:8080',
-  schemes: ['http', 'https']
+  schemes: ['https', 'http']
 };
 
 const outputFile = './swagger.json';
