@@ -10,6 +10,7 @@ const swaggerDocument = require('./swagger.json');
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', require('./routes'));
+
 app.use(bodyParser.json());
 
 mongodb.initDb((err) => {
@@ -22,9 +23,3 @@ mongodb.initDb((err) => {
     });
     }
 });
-const PORT = process.env.PORT || 8080;
-
-app.listen(port, () => {
-    console.log(`Runing on port ${port}`)
-});
-
