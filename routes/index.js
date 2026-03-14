@@ -5,5 +5,7 @@ router.get('/', (req, res) => {
 });
 
 router.use('/contacts', require('./contacts'));
-
+router.get('/', (req, res) => {
+  res.send('Contacts API');
+});
 module.exports = router;

@@ -1,12 +1,16 @@
 const express = require('express');
 
 const mongodb = require('./data/database.js');
+const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT ||  3000;
+const port = process.env.PORT ||  8080;
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
-
-
+app.use(express.json());
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', require('./routes'));
+app.use(bodyParser.json());
 
 mongodb.initDb((err) => {
     if (err) {
@@ -18,6 +22,7 @@ mongodb.initDb((err) => {
     });
     }
 });
+const PORT = process.env.PORT || 8080;
 
 app.listen(port, () => {
     console.log(`Runing on port ${port}`)

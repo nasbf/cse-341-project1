@@ -1,0 +1,36 @@
+### Get all contacts
+GET http://localhost:8080/contacts
+
+
+### Get single contact
+GET http://localhost:8080/contacts/69b586a3263e220a2bcc6356
+
+
+### Create contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Matias",
+  "lastName": "Mancipe",
+  "email": "mati@email.com",
+  "favoriteColor": "red",
+  "birthday": "2011-10-23"
+}
+
+
+### Update contact
+PUT http://localhost:8080/contacts/69b58bc31ae82a4a64283bee
+Content-Type: application/json
+
+{
+  "firstName": "Matias",
+    "lastName": "Mancipe Suarez",
+    "email": "maty@gmail.com",
+    "favoriteColor": "red",
+    "birthday": "2011-06-76"
+}
+
+
+### Delete contact
+DELETE http://localhost:8080/contacts/69b58bc31ae82a4a64283bee
