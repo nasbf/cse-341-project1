@@ -5,7 +5,7 @@
     "description": "API documentation for contacts",
     "version": "1.0.0"
   },
-  "host": "",
+  "host": "cse-341-project1-745m.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -23,7 +23,10 @@
     },
     "/contacts/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "description": "Get all contacts",
         "produces": [
           "application/json"
         ],
@@ -37,7 +40,10 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Create a Contact"
+        ],
+        "description": "Create a new contact",
         "parameters": [
           {
             "name": "body",
@@ -76,7 +82,10 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts by Id"
+        ],
+        "description": "Get single contact",
         "produces": [
           "application/json"
         ],
@@ -98,7 +107,10 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Update a Contact"
+        ],
+        "description": "Update",
         "parameters": [
           {
             "name": "id",
@@ -141,7 +153,10 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Delete a Contact"
+        ],
+        "description": "Delete",
         "parameters": [
           {
             "name": "id",

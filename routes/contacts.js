@@ -15,19 +15,19 @@ router.get('/',
 
 router.get('/:id', 
   /*  #swagger.tags = ['Contacts by Id']
-      #swagger.description = 'Get single contacts'*/
+      #swagger.description = 'Get single contact'*/
   contactsController.getSingle);
 router.post('/', 
-  /*  #swagger.tags = ['Contacts']
+  /*  #swagger.tags = ['Create a Contact']
       #swagger.description = 'Create a new contact'*/
  contactsController.createContact);
 router.put('/:id', 
-  /*  #swagger.tags = ['Contacts']
-      #swagger.description = 'Update a contact'*/
+  /*  #swagger.tags = ['Update a Contact']
+      #swagger.description = 'Update'*/
   contactsController.updateContact)
 router.delete('/:id', 
-  /*  #swagger.tags = ['Contacts']
-      #swagger.description = 'Delete a contact'*/
+  /*  #swagger.tags = ['Delete a Contact']
+      #swagger.description = 'Delete'*/
   contactsController.deleteContact); 
 
 
