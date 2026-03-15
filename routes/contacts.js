@@ -7,13 +7,28 @@ const contactsController = require('../controllers/contacts');
   res.send('Contacts route working');
 });*/
 
-router.get('/', contactsController.getAll);
+router.get('/', 
+  /*  #swagger.tags = ['Contacts']
+      #swagger.description = 'Get all contacts'*/
+      contactsController.getAll);
 
 
-router.get('/:id', contactsController.getSingle);
-router.post('/', contactsController.createContact);
-router.put('/:id', contactsController.updateContact)
-router.delete('/:id', contactsController.deleteContact); 
+router.get('/:id', 
+  /*  #swagger.tags = ['Contacts by Id']
+      #swagger.description = 'Get single contacts'*/
+  contactsController.getSingle);
+router.post('/', 
+  /*  #swagger.tags = ['Contacts']
+      #swagger.description = 'Create a new contact'*/
+ contactsController.createContact);
+router.put('/:id', 
+  /*  #swagger.tags = ['Contacts']
+      #swagger.description = 'Update a contact'*/
+  contactsController.updateContact)
+router.delete('/:id', 
+  /*  #swagger.tags = ['Contacts']
+      #swagger.description = 'Delete a contact'*/
+  contactsController.deleteContact); 
 
 
 module.exports = router;
